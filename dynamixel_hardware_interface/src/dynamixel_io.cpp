@@ -956,7 +956,7 @@ bool DynamixelIO::setComplianceMargins(int servo_id, uint8_t cw_margin, uint8_t 
         checkForErrors(servo_id, response[4], "setComplianceMargins");
         return true;
     }
-    ROS_INFO("DEBUG error: %d",response[4]);
+    // ROS_INFO("DEBUG error: %d",response[4]);
     return false;
 }
 
