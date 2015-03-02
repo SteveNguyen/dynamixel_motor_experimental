@@ -35,6 +35,7 @@
 #include <set>
 #include <string>
 #include <vector>
+#include <iostream>
 
 #include <clam/gearbox/flexiport/flexiport.h>
 //#include <gearbox/src/flexiport/flexiport.h>
