@@ -949,6 +949,7 @@ bool DynamixelIO::setComplianceMargins(int servo_id, uint8_t cw_margin, uint8_t 
         dd->cw_compliance_margin = cw_margin;
         dd->ccw_compliance_margin = ccw_margin;
 
+        std::cout<<"DEBUG error: "<<response[4]<<std::endl;
         checkForErrors(servo_id, response[4], "setComplianceMargins");
         return true;
     }
@@ -1479,7 +1480,7 @@ void DynamixelIO::checkForErrors(int servo_id, uint8_t error_code, std::string c
     if ((error_code & DXL_INSTRUCTION_ERROR) != 0)   { error_msgs.push_back("Instruction Error"); }
 
 
-    std::cout<<"DEBUG ERROR: "<<error_code<<std::endl;
+    // std::cout<<"DEBUG ERROR: "<<error_code<<std::endl;
 
     std::stringstream m;
     m << "Detected error condition [";
