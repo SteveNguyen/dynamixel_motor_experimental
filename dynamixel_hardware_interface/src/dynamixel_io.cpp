@@ -972,6 +972,7 @@ bool DynamixelIO::setCWComplianceMargin(int servo_id, uint8_t cw_margin)
         DynamixelData* dd = findCachedParameters(servo_id);
         dd->cw_compliance_margin = cw_margin;
 
+        ROS_INFO("DEBUG error: %d",response[4]);
         checkForErrors(servo_id, response[4], "setCWComplianceMargin");
         return true;
     }
@@ -991,6 +992,7 @@ bool DynamixelIO::setCCWComplianceMargin(int servo_id, uint8_t ccw_margin)
         DynamixelData* dd = findCachedParameters(servo_id);
         dd->ccw_compliance_margin = ccw_margin;
 
+        ROS_INFO("DEBUG error: %d",response[4]);
         checkForErrors(servo_id, response[4], "setCCWComplianceMargin");
         return true;
     }
