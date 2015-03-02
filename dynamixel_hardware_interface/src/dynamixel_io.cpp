@@ -37,6 +37,8 @@
 #include <vector>
 #include <iostream>
 
+#include <ros/ros.h>
+
 #include <clam/gearbox/flexiport/flexiport.h>
 //#include <gearbox/src/flexiport/flexiport.h>
 //#include <dynamixel_hardware_interface/flexiport.h>
