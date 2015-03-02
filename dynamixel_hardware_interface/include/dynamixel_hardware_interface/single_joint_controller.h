@@ -297,7 +297,7 @@ public:
   virtual bool processTorqueEnable(dynamixel_hardware_interface::TorqueEnable::Request& req,
                                    dynamixel_hardware_interface::TorqueEnable::Request& res)
   {
-    return setTorqueEnable( req.torque_enable );    
+    return setTorqueEnable( req.torque_enable );
   }
 
   bool setTorqueEnable( bool torque_enable )
@@ -321,7 +321,7 @@ public:
   bool processResetOverloadError(std_srvs::Empty::Request& req,
                                  std_srvs::Empty::Request& res)
   {
-    return resetOverloadError();    
+    return resetOverloadError();
   }
 
   bool resetOverloadError()
@@ -339,7 +339,7 @@ public:
   bool processSetTorqueLimit(dynamixel_hardware_interface::SetTorqueLimit::Request& req,
                              dynamixel_hardware_interface::SetTorqueLimit::Request& res)
   {
-    return setTorqueLimit( req.torque_limit );    
+    return setTorqueLimit( req.torque_limit );
   }
 
   bool setTorqueLimit( double torque_limit )
@@ -375,7 +375,7 @@ public:
   bool processSetComplianceMargin(dynamixel_hardware_interface::SetComplianceMargin::Request& req,
                                   dynamixel_hardware_interface::SetComplianceMargin::Request& res)
   {
-    return setComplianceMargin( req.margin );    
+    return setComplianceMargin( req.margin );
   }
 
   bool setComplianceMargin( int margin )
@@ -400,7 +400,7 @@ public:
   bool processSetComplianceSlope(dynamixel_hardware_interface::SetComplianceSlope::Request& req,
                                  dynamixel_hardware_interface::SetComplianceSlope::Request& res)
   {
-    return setComplianceSlope( req.slope );    
+    return setComplianceSlope( req.slope );
   }
 
   bool setComplianceSlope( int slope )
@@ -518,24 +518,3 @@ private:
 }
 
 #endif  // DYNAMIXEL_HARDWARE_INTERFACE_SINGLE_JOINT_CONTROLLER_H
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
