@@ -243,6 +243,8 @@ public:
 
       // set compliance margins and slopes for all motors controlling this joint to values
       // provided in the configuration or values from the master motor
+
+      /*
       if (!dxl_io_->setComplianceMargins(motor_id, compliance_margin_, compliance_margin_))
       {
         ROS_ERROR("%s: unable to set complaince margins for motor %d", name_.c_str(), motor_id);
@@ -254,6 +256,7 @@ public:
         ROS_ERROR("%s: unable to set complaince slopes for motor %d", name_.c_str(), motor_id);
         return false;
       }
+      */
     }
 
     return true;
