@@ -1566,6 +1566,7 @@ bool DynamixelIO::write(int servo_id,
     if (success) { success = readResponse(response); }
     pthread_mutex_unlock(&serial_mutex_);
 
+    std::cout<<"DEBUG WRITE: "<<success<<std::endl;
     return success;
 }
 
@@ -1624,7 +1625,7 @@ bool DynamixelIO::syncWrite(int address,
     return success;
 }
 
-bool DynamixelIO::waitForBytes(ssize_t n_bytes, uint16_t timeout_ms)
+bool DynamixelIO::waitForBytes(size_t n_bytes, uint16_t timeout_ms)
 {
     struct timespec ts_now;
     clock_gettime(CLOCK_REALTIME, &ts_now);
@@ -1649,7 +1650,7 @@ bool DynamixelIO::waitForBytes(ssize_t n_bytes, uint16_t timeout_ms)
 bool DynamixelIO::writePacket(const void* const buffer, size_t count)
 {
     port_->Flush();
-    return (port_->Write(buffer, count) == (ssize_t) count);
+    return (port_->Write(buffer, count) == (size_t) count);
 }
 
 bool DynamixelIO::readResponse(std::vector<uint8_t>& response)
