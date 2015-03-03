@@ -67,7 +67,8 @@ DynamixelIO::DynamixelIO(std::string device="/dev/ttyUSB0",
     port_ = flexiport::CreatePort(options);
 
     // 100 microseconds = 0.1 milliseconds
-    flexiport::Timeout t(0, 100);
+    // flexiport::Timeout t(0, 100);
+    flexiport::Timeout t(0, 1000);
     port_->SetTimeout(t);
 }
 
@@ -1566,7 +1567,7 @@ bool DynamixelIO::write(int servo_id,
     if (success) { success = readResponse(response); }
     pthread_mutex_unlock(&serial_mutex_);
 
-    std::cout<<"DEBUG WRITE: "<<success<<std::endl;
+    // std::cout<<"DEBUG WRITE: "<<success<<std::endl;
     return success;
 }
 
